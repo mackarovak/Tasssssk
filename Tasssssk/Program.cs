@@ -20,7 +20,7 @@ namespace Tasssssk
                 // вывод задач
                 var tasks = db.Tasks.Include(u => u.Projects).ToList();
                 foreach (Tasks task in tasks)
-                    Console.WriteLine($"{task.TaskName} - {task.Projects?.Name}");
+                    Console.WriteLine($"{task.TaskName} - {task.Projects?.TaskName}");
 
                 // вывод проектов
                 var projects = db.Projects.Include(c => c.Tasks).ToList();
